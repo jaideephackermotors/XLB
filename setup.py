@@ -52,7 +52,7 @@ setup(
     name="xlb",
     version="0.3.2",
     description="XLB: Accelerated Lattice Boltzmann (XLB) for Physics-based ML",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Mehdi Ataei",
     url="https://github.com/Autodesk/XLB",
@@ -65,7 +65,6 @@ setup(
         "trimesh>=4.4.9",
         "numpy-stl>=3.1.2",
         "pydantic>=2.9.1",
-        "ruff>=0.14.1",
         "jax>=0.8.2",  # Base JAX CPU-only requirement
         "nvtx>=0.2.0",  # NVTX ranges (e.g. nse_multires_stepper); listed in requirements.txt
     ],

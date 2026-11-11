@@ -1,5 +1,6 @@
 # Wind tunnel simulation using the XLB library
 
+import ast
 import os
 import numpy as np
 import warp as wp
@@ -131,7 +132,7 @@ if __name__ == "__main__":
     output_directory = args.output_directory
     final_stl_file = args.final_stl_file
     max_base_velocity = args.max_base_velocity
-    shape = eval(args.shape)
+    shape = ast.literal_eval(args.shape)
     tau = args.tau
     nr_optimization_steps = args.nr_optimization_steps
     nr_steps = args.nr_steps
@@ -143,7 +144,7 @@ if __name__ == "__main__":
     collision = args.collision
     equilibrium = args.equilibrium
     velocity_set = args.velocity_set
-    ooc_block_shape = eval(args.ooc_block_shape)
+    ooc_block_shape = ast.literal_eval(args.ooc_block_shape)
     ooc_ghost_cell_thickness = args.checkpoint_frequency * 2
     nr_streams = args.nr_streams
     if args.comm:

@@ -1,5 +1,6 @@
 # Lid Drive Cavity using out-of-core memory with XLB library
 
+import ast
 import os
 import warp as wp
 import numpy as np
@@ -56,7 +57,7 @@ if __name__ == "__main__":
     # Set parameters
     output_directory = args.output_directory
     base_velocity = args.base_velocity
-    shape = eval(args.shape)
+    shape = ast.literal_eval(args.shape)
     tau = args.tau
     nr_steps = args.nr_steps
     if args.save_q_criterion_frequency is None:
@@ -67,7 +68,7 @@ if __name__ == "__main__":
     collision = args.collision
     equilibrium = args.equilibrium
     velocity_set = args.velocity_set
-    ooc_block_shape = eval(args.ooc_block_shape)
+    ooc_block_shape = ast.literal_eval(args.ooc_block_shape)
     ooc_ghost_cell_thickness = args.ooc_ghost_cell_thickness
     nr_streams = args.nr_streams
     if args.comm:
